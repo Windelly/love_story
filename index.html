@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="Love_Story/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="Love_Story/jquery.js"></script>
+	<script type="text/javascript" src="Love_Story/garden.js"></script>
+
+    <script type="text/javascript" src="Love_Story/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div style="width: 1110px; height: 625px; margin-top: 179px; margin-left: 372.5px;" id="content">
+			<div style="margin-top: 112.5px;" id="code">
+				小白：<br>
+				<br>
+				你是我见过最单纯善良的人<br>
+				<br>
+				你打开了我的心<br>
+				<br>
+				遇见你是我这辈子发生的最好的事<br>
+				<br>
+				<br>
+				<br>
+				老婆：<br>
+				<br>
+				无论发生什么事情<br>
+				<br>
+				我都是你温柔的港湾<br>
+				<br>
+				和坚强的依靠<br>
+				</span></span></span></span></span></span></span>
+			</div>
+			<div id="loveHeart">
+				<canvas height="625" width="670" id="garden"></canvas>
+
+				<div style="position: absolute; top: 205px; left: 520px; display:none;" id="words">
+					<div  id="messages">
+						小白,我们在一起已经
+						<div id="elapseClock"><span class="digit">365</span> 天 <span class="digit">00</span> 时 <span class="digit">00</span> 分 <span class="digit">00</span> 秒啦！</div>
+					</div>
+					<div  id="loveu">
+						永远爱你<br>
+						<div class="signature">-大黄</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by hackerzhou project.<br>
+            Copyright © 2015-2018 <a href="http://wentaobingjie.com/">wentaobingjie.com</a>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2015, 6, 20);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+			adjustWordsPosition();
+
+		}
+	</script>
+
+</body></html>
